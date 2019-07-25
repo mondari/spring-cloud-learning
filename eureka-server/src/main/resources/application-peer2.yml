@@ -1,0 +1,16 @@
+## 多节点模式配置 ##
+
+# 各节点的 spring.application.name 需要保持一致
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 8001
+
+eureka:
+  instance:
+    # 各节点的 eureka.instance.hostname 不能一样
+    # 如果部署在不同的主机，可以不填；否则必须指定名称以区别不同副本节点
+    # 且需要在hosts里设置，如“ 127.0.0.1 peer2”
+    hostname: peer2

@@ -1,0 +1,22 @@
+## 单节点模式配置 ##
+
+spring:
+  application:
+    name: eureka-server
+
+# 由于注册中心的默认端口是8761，所以这里设置为8761
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # 向 eureka-server 注册自己（作为单节点server要设为false，因为自己就是eureka-server，没有其它server）
+    register-with-eureka: false
+    # 是否从注册中心中获取注册信息（作为单节点server要设为false，因为没有其他server，只需要维护自己的注册信息就行了）
+    fetch-registry: false
+    serviceUrl:
+      # serviceUrl.defaultZone 默认是 http://localhost:8761/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
