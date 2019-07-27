@@ -7,3 +7,13 @@ eureka:
     # 这里的 peer1、peer2、peer3 是副本节点，需要在hosts里设置，如“ 127.0.0.1 peer1”
     service-url:
       defaultZone: http://localhost:8761/eureka/,http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
+feign:
+  hystrix:
+    enabled: true
+# To enable the Hystrix metrics stream
+# 同时还要引入spring-boot-starter-actuator的依赖
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

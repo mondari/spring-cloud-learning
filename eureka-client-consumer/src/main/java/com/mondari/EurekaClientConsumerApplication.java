@@ -1,14 +1,17 @@
 package com.mondari;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@EnableHystrix
+@EnableHystrixDashboard
 @EnableFeignClients
 @EnableEurekaClient
 @SpringBootApplication
@@ -30,7 +33,7 @@ public class EurekaClientConsumerApplication {
 
         /**
          * 浏览器访问 http://localhost:8080/hello
-         *
+         * <p>
          * 两种访问结果“Hello world!(from master producer)” 和 “Hello world!(from slave producer)” 会交替出现
          * 这说明客户端会交替访问同一服务的生产者，也就是说客户端负载均衡（通过Ribbon实现）生效
          *
