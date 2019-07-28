@@ -1,5 +1,6 @@
 package com.mondari;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
@@ -16,11 +17,14 @@ import java.util.List;
 
 @EnableEurekaClient
 @SpringBootApplication
-public class EurekaClientProducerMasterApplication {
+public class EurekaClientProducerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaClientProducerMasterApplication.class, args);
+        SpringApplication.run(EurekaClientProducerApplication.class, args);
     }
+
+    @Value("${hello:Hello %s!(default)}")
+    String hello;
 
     @RestController
     class ServiceProviderRestController {
@@ -48,13 +52,13 @@ public class EurekaClientProducerMasterApplication {
         }
 
         /**
-         * 浏览器访问 http://localhost:8010/hello
+         * 浏览器访问 http://localhost:8090/hello
          *
          * @return
          */
         @GetMapping("/hello")
         public String hello(@RequestParam(defaultValue = "world", required = false) String name) {
-            return String.format("Hello %s!(from master producer)", name);
+            return String.format(hello, name);
         }
     }
 }

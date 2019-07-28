@@ -1,0 +1,3 @@
+server:
+  port: 8091
+hello: Hello %s!(from peer1 producer)

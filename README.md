@@ -17,7 +17,7 @@
 
 链路追踪（Trace）：Spring Cloud Sleuth
 
-消息总线：Spring Cloud Bus
+消息总线（Message Broker 消息代理）：Spring Cloud Bus
 
 ## 项目介绍
 1. eureka-server： 单节点和多节点注册中心
