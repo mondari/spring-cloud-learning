@@ -1,3 +1,7 @@
+spring:
+  application:
+    # 如果注册中心是多节点，则每个节点的 spring.application.name 需要保持一致
+    name: eureka-server
 eureka:
   client:
     serviceUrl:
