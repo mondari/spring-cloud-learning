@@ -7,7 +7,7 @@
 
 断路器（Circuit Breaker）：Netflix Hystrix
 
-配置中心（External Configuration）：Spring Cloud Config，Apollo
+配置中心（External Configuration）：Spring Cloud Config，Ctrix Apollo，disconf
 
 配置加密：Spring Cloud Vault
 

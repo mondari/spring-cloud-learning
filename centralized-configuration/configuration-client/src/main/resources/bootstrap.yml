@@ -4,11 +4,19 @@ spring:
     name: configuration-client
   cloud:
     config:
-      # 配置中心的默认位置
-      uri: http://localhost:8888
+      # 配置中心的默认位置，如果使用注册中心则无需该配置
+#      uri: http://localhost:8888
+      # git仓库分支，默认是master
+      label: master
+      # 配置文件的名称，默认是appName，appName没有则为“application”
+      name: ${spring.application.name:application}
       # 默认是default场景，根据需要设置为dev、sit、pro等场景
       profile: default
       # 默认不开启服务发现，需要手动开启
-#      discovery:
-#        enabled: true
-#        service-id: xxx
+      discovery:
+        enabled: true
+        service-id: configuration-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

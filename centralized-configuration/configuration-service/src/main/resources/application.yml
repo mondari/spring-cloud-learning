@@ -3,16 +3,24 @@ server:
   port: 8888
 
 spring:
+  application:
+    name: configuration-server
   cloud:
     config:
       server:
         git:
           # 必须是git仓库，且是仓库根目录
-          uri: file:./
-          # git仓库下的子目录
+          uri: F:/Workspace/com.mondari/spring-cloud-learning
+#          uri: file:./
+          # git仓库的子目录
           search-paths: config-repo
-          # git分支，默认是master
+          # git仓库分支，默认是master
           default-label: master
           # 远程仓库的用户名和密码
 #          username: xxx
 #          password: xxx
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
