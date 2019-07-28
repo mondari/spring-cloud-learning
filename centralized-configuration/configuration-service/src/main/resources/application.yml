@@ -7,11 +7,12 @@ spring:
     config:
       server:
         git:
-#          必须是git仓库，且是仓库根目录
+          # 必须是git仓库，且是仓库根目录
           uri: file:./
-#          uri: F:/Workspace/com.mondari/spring-cloud-learning/
-#          git仓库下的子目录
+          # git仓库下的子目录
           search-paths: config-repo
-#          远程仓库的用户名和密码
+          # git分支，默认是master
+          default-label: master
+          # 远程仓库的用户名和密码
 #          username: xxx
 #          password: xxx
