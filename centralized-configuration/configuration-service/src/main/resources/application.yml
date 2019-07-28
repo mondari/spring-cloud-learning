@@ -1,0 +1,17 @@
+server:
+  # 由于配置中心默认端口是8888，所以这里设置为8888
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+#          必须是git仓库，且是仓库根目录
+          uri: file:./
+#          uri: F:/Workspace/com.mondari/spring-cloud-learning/
+#          git仓库下的子目录
+          search-paths: config-repo
+#          远程仓库的用户名和密码
+#          username: xxx
+#          password: xxx

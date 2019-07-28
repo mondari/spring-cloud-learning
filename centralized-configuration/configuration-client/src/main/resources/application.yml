@@ -1,0 +1,6 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        # 打开actuator的refresh端点，这样POST请求该端点就可以刷新配置
+        include: refresh
