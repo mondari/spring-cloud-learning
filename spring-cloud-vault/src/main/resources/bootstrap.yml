@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-cloud-vault
+  cloud:
+    vault:
+      uri: http://192.168.56.101:8200
+      token: 00000000-0000-0000-0000-000000000000
+      kv:
+        enabled: true
