@@ -19,6 +19,8 @@
 
 消息总线（Message Broker 消息代理）：Spring Cloud Bus
 
+参考：https://blog.csdn.net/yejingtao703/article/details/78331442
+
 ## 项目介绍
 1. eureka-server： 单节点和多节点注册中心
 2. eureka-client-producer-xxx：eureka客户端，同时也是服务生产者
