@@ -5,7 +5,7 @@
 
 客户端负载均衡（Load Balancer）： Netflix Ribbon，Spring Cloud Feign
 
-断路器（Circuit Breaker）：Netflix Hystrix
+断路器，熔断（Circuit Breaker）：Netflix Hystrix，Alibaba Sentinel
 
 配置中心（External Configuration）：Spring Cloud Config，Ctrix Apollo，disconf
 
