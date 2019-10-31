@@ -7,11 +7,13 @@
 
 断路器，熔断（Circuit Breaker）：Netflix Hystrix，Alibaba Sentinel
 
+声明式服务调用：Feign（本质上就是Ribbon+Hystrix）
+
 配置中心（External Configuration）：Spring Cloud Config，Ctrix Apollo，disconf
 
 配置加密：Spring Cloud Vault
 
-服务网关（Router） ：Netflix Zuul，Spring Cloud Gateway
+服务网关（Router） ：Netflix Zuul，Spring Cloud Gateway，Kong
 
 测试（Test）：Spring Cloud Contract
 
