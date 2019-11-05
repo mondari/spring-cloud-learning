@@ -5,18 +5,11 @@
 
     <parent>
         <groupId>com.mondari</groupId>
-        <artifactId>spring-cloud-learning</artifactId>
+        <artifactId>eureka-client</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>eureka-server</artifactId>
+    <artifactId>service-producer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>

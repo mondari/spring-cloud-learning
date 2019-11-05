@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>com.mondari</groupId>
-        <artifactId>spring-cloud-learning</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <artifactId>spring-cloud-learning</artifactId>
     </parent>
 
-    <artifactId>eureka-server</artifactId>
+    <artifactId>spring-cloud-vault-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
+        <!-- Vault Starter -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-vault-config</artifactId>
         </dependency>
     </dependencies>
 
