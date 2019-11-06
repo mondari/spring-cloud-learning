@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: @artifactId@
+  boot:
+    admin:
+      client:
+        url: http://localhost:8769
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+eureka:
+  client:
+    enabled: false
