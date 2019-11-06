@@ -9,3 +9,8 @@ eureka:
     # 如果部署在不同的主机，可以不填；否则必须指定名称以区别不同副本节点
     # 且需要在hosts里设置，如“ 127.0.0.1 peer2”
     hostname: peer2
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
