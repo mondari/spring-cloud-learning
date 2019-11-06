@@ -23,6 +23,7 @@
         <module>eureka-server</module>
         <module>config</module>
         <module>spring-cloud-vault-demo</module>
+        <module>admin</module>
     </modules>
 
     <dependencies>
