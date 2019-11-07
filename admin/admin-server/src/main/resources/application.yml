@@ -1,10 +1,33 @@
 spring:
   application:
     name: @artifactId@
+  # 添加 spring.security 的用户名和密码，用于登录和加密 actuator endpoints
+  security:
+    user:
+      name: admin
+      password: admin
 
 server:
   port: 8769
 
 eureka:
   client:
-    enabled: false
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      startup: ${random.int}    #needed to trigger info and endpoint update after restart
+      user.name: ${spring.security.user.name}           #These two are needed so that the **server**
+      user.password: ${spring.security.user.password}   #can access the protected client endpoints
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

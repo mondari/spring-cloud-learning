@@ -9,7 +9,7 @@
         <artifactId>spring-cloud-learning</artifactId>
     </parent>
 
-    <artifactId>spring-cloud-vault-demo</artifactId>
+    <artifactId>vault</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>

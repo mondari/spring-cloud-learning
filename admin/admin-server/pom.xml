@@ -11,14 +11,14 @@
     <artifactId>admin-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <properties>
-        <spring-boot-admin.version>2.1.5</spring-boot-admin.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast</artifactId>
         </dependency>
     </dependencies>
 

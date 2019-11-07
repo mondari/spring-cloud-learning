@@ -13,6 +13,7 @@
     <groupId>com.mondari</groupId>
     <artifactId>spring-cloud-learning</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <properties>
         <java.version>1.8</java.version>
@@ -22,7 +23,7 @@
     <modules>
         <module>eureka-server</module>
         <module>config</module>
-        <module>spring-cloud-vault-demo</module>
+        <module>vault</module>
         <module>admin</module>
     </modules>
 
