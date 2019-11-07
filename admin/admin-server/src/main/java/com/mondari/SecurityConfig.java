@@ -16,11 +16,11 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
  * @Version: 1.0
  */
 @Configuration()
-public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final String adminContextPath;
 
-    public SecuritySecureConfig(AdminServerProperties adminServerProperties) {
+    public SecurityConfig(AdminServerProperties adminServerProperties) {
         this.adminContextPath = adminServerProperties.getContextPath();
     }
 
