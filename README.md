@@ -22,3 +22,11 @@
 消息总线（Message Broker 消息代理）：Spring Cloud Bus
 
 参考：https://blog.csdn.net/yejingtao703/article/details/78331442
+
+bootstrap.yml 中需要配置好应用名称、注册中心和配置中心
+
+**各服务端口**
+服务网关端口：8080
+注册中心端口：8761
+配置中心端口：8888
+admin端口：8769
