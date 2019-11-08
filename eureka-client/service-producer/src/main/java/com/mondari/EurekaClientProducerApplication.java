@@ -36,7 +36,7 @@ public class EurekaClientProducerApplication {
         }
 
         /**
-         * 浏览器访问 http://localhost:8010/service-instances/service-producer
+         * 浏览器访问 http://localhost:{port}/service-instances/service-producer
          *
          * @param applicationName
          * @return

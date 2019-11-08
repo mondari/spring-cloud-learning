@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: configuration-server
+    name: @artifactId@
   cloud:
     config:
       server:

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-cloud-vault
+    name: @artifactId@
   cloud:
     vault:
       uri: http://192.168.56.101:8200

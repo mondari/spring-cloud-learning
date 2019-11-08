@@ -1,3 +1,43 @@
 spring:
+  application:
+    name: @artifactId@
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # gateway 开启服务注册和发现的功能，这样其他服务就能通过服务ID在网关中转发
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        # 如果服务名过长，可以在这里自定义服务的路由
+        - id: service-producer
+          uri: lb://SERVICE-PRODUCER
+          predicates:
+            - Path=/producer/**
+          filters:
+            - StripPrefix=1
+        - id: service-consumer
+          uri: lb://SERVICE-CONSUMER
+          predicates:
+            - Path=/consumer/**
+          filters:
+            - StripPrefix=1
+        # 限流配置
+#        - id: limit_route
+#          uri: http://httpbin.org:80
+#          predicates:
+#            - Path=/anything/**
+#            - Host=*.limited.com
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 1
+#                redis-rate-limiter.burstCapacity: 2
   redis:
     host: centos-vm
+    database: 0
+#  security:
+#    user:
+#      name: user
+#      password: password
+#      roles: USER

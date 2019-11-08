@@ -32,7 +32,7 @@ public class EurekaClientConsumerApplication {
         }
 
         /**
-         * 浏览器访问 http://localhost:8080/hello
+         * 浏览器访问 http://localhost:{port}/hello
          * <p>
          * 两种访问结果“Hello world!(from master producer)” 和 “Hello world!(from slave producer)” 会交替出现
          * 这说明客户端会交替访问同一服务的生产者，也就是说客户端负载均衡（通过Ribbon实现）生效

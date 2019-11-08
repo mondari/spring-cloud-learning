@@ -1,7 +1,7 @@
 spring:
   application:
     # 配置中心是通过应用名来获取相应配置文件，没有该应用的配置文件则获取application的配置文件
-    name: configuration-client
+    name: @artifactId@
   cloud:
     config:
       # 配置中心的默认位置，如果使用注册中心则无需该配置
