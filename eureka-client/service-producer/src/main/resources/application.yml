@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: @artifactId@
+  sleuth:
+    sampler:
+      # 设置采样率为1，也即100%，表示采样所有数据
+      probability: 1.0
 eureka:
   client:
     service-url:
