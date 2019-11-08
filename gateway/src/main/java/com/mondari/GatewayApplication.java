@@ -29,29 +29,35 @@ public class GatewayApplication {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         //@formatter:off
         return builder.routes()
+                // Spring Cloud Gateway 内置了10个Predicate和29个Filter，下面对常用的进行演示
+
+                // Path Route Predicate
                 .route("path_route", r -> r
                         .path("/get")
                         .filters(gatewayFilterSpec -> gatewayFilterSpec.addRequestHeader("Hello", "World"))
                         .uri(URI_HTTP_HTTPBIN_ORG))
+                // Host Route Predicate
                 .route("host_route", r -> r
                         .host("*.myhost.com")
                         .uri(URI_HTTP_HTTPBIN_ORG))
-                .route("hystrix", r -> r
+                // Hystrix GatewayFilter
+                .route("hystrix_route", r -> r
                         .host("*.hystrix.com")
                         .filters(f -> f.hystrix(config -> config.setName("mycmd")))
                         .uri(URI_HTTP_HTTPBIN_ORG))
-                .route("hystrix_fallback", r -> r
+                .route("hystrix_fallback_route", r -> r
                         .host("*.hystrixfallback.com")
                         .filters(f -> f.hystrix(config -> config
                                 .setName("slowcmd")
                                 .setFallbackUri("forward:/hystrixfallback")))
                         .uri(URI_HTTP_HTTPBIN_ORG))
+                // RewritePath GatewayFilter
                 .route("rewrite_route", r -> r
                         .host("*.rewrite.com")
                         .filters(f -> f.rewritePath("/foo/(?<segment>.*)",
                                 "/${segment}"))
                         .uri(URI_HTTP_HTTPBIN_ORG))
-                // 使用令牌桶（底层基于redis）进行限流配置（可以放到配置文件中进行配置）
+                // 使用 RedisRateLimiter 令牌桶进行限流配置
                 .route("limit_route", r -> r
                         .host("*.limited.com").and().path("/anything/**")
                         .filters(f -> f.requestRateLimiter(c -> c.setRateLimiter(redisRateLimiter())))

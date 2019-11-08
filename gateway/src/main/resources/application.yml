@@ -22,6 +22,16 @@ spring:
             - Path=/consumer/**
           filters:
             - StripPrefix=1
+        # Hystrix 配置
+#        - id: hystrix_fallback_route
+#            uri: http://httpbin.org:80
+#            predicates:
+#              - Host=*.hystrixfallback.com
+#            filters:
+#              - name: Hystrix
+#                args:
+#                  name: fallbackcmd
+#                  fallbackUri: forward:/hystrixfallback
         # 限流配置
 #        - id: limit_route
 #          uri: http://httpbin.org:80
