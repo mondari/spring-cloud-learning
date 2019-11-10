@@ -1,7 +1,7 @@
 # spring-cloud-learning
 
 ## Spring Cloud 组件
-注册中心（Service Discovery）： Netflix Eureka， Consul， Zookeeper，etcd
+注册中心（Service Discovery）： Netflix Eureka，HashiCorp Consul， Zookeeper，etcd，nacos
 
 客户端负载均衡（Load Balancer）： Netflix Ribbon，Spring Cloud Feign
 
@@ -11,7 +11,7 @@
 
 配置中心（External Configuration）：Spring Cloud Config，Ctrix Apollo，disconf
 
-配置加密：Spring Cloud Vault
+配置加密：HashiCorp Vault
 
 服务网关（Router） ：Netflix Zuul，Spring Cloud Gateway，Kong
 
