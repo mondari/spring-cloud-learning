@@ -21,7 +21,7 @@ Spring Cloud 各组件的使用示例
 ## 启动项目
 
 1. 先启动注册中心 eureka-server
-2. 再启动配置中心 config
+2. 再启动配置中心 config-server
 3. 启动 service-producer、service-consumer、zuul 或 gateway（二选其一）、admin
 4. 访问注册中心 http://localhost:8761，服务生产者 http://localhost:8081/hello，服务消费者 http://localhost:8082/hello，服务网关 http://localhost:8080，服务管理 http://localhost:8769
 

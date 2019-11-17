@@ -27,7 +27,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(properties = { "spring.profiles.active=native" })
-public class ConfigServiceApplicationTest {
+public class ConfigServerApplicationTest {
 
     @Autowired
     private EnvironmentController controller;

@@ -10,12 +10,14 @@ eureka:
     # 但是 eureka.instance.hostname 不能一样
     # eureka.instance.hostname 建议设置为 registry，并在系统 hosts 中设置好域名
     hostname: localhost
+    # eureka.instance.prefer-ip-address 设为 true 的话，单节点的注册中心也会显示在 “DS Replicas”中作为副本
+    # prefer-ip-address: true
   client:
     # 是否向注册中心注册自己（作为单节点server要设为false，因为自己就是注册中心，且没有其它注册中心）
     register-with-eureka: false
     # 是否从注册中心中获取注册信息（作为单节点server要设为false，因为没有其它注册中心来同步，只需要维护自己的注册信息就行了）
     fetch-registry: false
     serviceUrl:
-      # 注册中心启动后，点击 http://localhost:8761 可以查看注册中心的 web 界面
+      # 注册中心启动后，访问 http://localhost:8761 可以查看注册中心的 web 界面
       # 注册中心地址，默认是 http://localhost:8761/eureka/
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
